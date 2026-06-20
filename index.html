@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para el amor de mi vida 🥺💗</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background:linear-gradient(
+    135deg,
+    #fff8f5,
+    #fde2e4,
+    #faedcd
+    );
+    text-align:center;
+    padding:40px;
+    min-height:100vh;
+}
+
+img{
+    width:300px;
+    max-width:90%;
+    border-radius:20px;
+}
+
+h1{
+    color:#E08E9B;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 30px;
+    background:linear-gradient(
+    135deg,
+    #e08e9b,
+    #d4a373
+    );
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(224,142,155,.4);
+}
+
+.hero-card{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+}
+
+.hero-card img{
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.hero-card{
+    animation:aparecer 1.2s ease;
+}
+
+@keyframes aparecer{
+
+from{
+    opacity:0;
+    transform:translateY(30px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+.timeline{
+    max-width:700px;
+    margin:auto;
+    margin-top:40px;
+}
+
+.evento{
+    background:white;
+    padding:25px;
+    margin:25px 0;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    backdrop-filter: blur(8px);
+}
+
+.evento h3{
+    color:#D4A373;
+    margin-bottom:10px;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#E08E9B;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 0.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+#carta{
+max-width:800px;
+margin:auto;
+margin-top:50px;
+}
+
+#carta p{
+line-height:1.8;
+font-size:18px;
+}
+
+#capitulo2{
+max-width:800px;
+margin:auto;
+margin-top:60px;
+}
+
+#capitulo3{
+max-width:800px;
+margin:auto;
+margin-top:60px;
+}
+
+#capitulo4{
+max-width:800px;
+margin:auto;
+margin-top:60px;
+}
+
+#capitulo5{
+max-width:800px;
+margin:auto;
+margin-top:60px;
+}
+
+#capitulo6{
+max-width:800px;
+margin:auto;
+margin-top:60px;
+margin-bottom:80px;
+}
+
+#capitulo6 h3{
+text-align:center;
+color:#E08E9B;
+margin-top:20px;
+font-size:28px;
+}
+
+#galeria{
+max-width:1000px;
+margin:auto;
+margin-top:80px;
+}
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:10px;
+}
+
+.galeria img{
+border:4px solid rgba(255,255,255,.8);
+}
+
+.galeria img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:20px;
+cursor:pointer;
+transition:.5s;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.galeria img:hover{
+transform:scale(1.06);
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+}
+
+#musica{
+max-width:800px;
+margin:auto;
+margin-top:80px;
+}
+
+.corazones{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:-1;
+}
+
+.corazon{
+position:absolute;
+font-size:20px;
+animation:flotar 8s linear infinite;
+}
+
+@keyframes flotar{
+
+from{
+transform:translateY(100vh);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+to{
+transform:translateY(-100px);
+opacity:0;
+}
+
+}
+
+#bienvenida{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(
+135deg,
+#fff8f5,
+#fde2e4,
+#faedcd
+);
+z-index:99999;
+}
+
+#bienvenida h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+#bienvenida p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+#contenido{
+display:none;
+opacity:0;
+animation:aparecerContenido 1.2s forwards;
+}
+
+#bienvenida h1{
+animation:latido 2s infinite;
+}
+
+@keyframes latido{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+@keyframes aparecerContenido{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:30px;
+}
+
+h2{
+font-size:24px;
+}
+
+.hero-card{
+padding:20px;
+}
+
+.evento{
+padding:20px;
+}
+
+#bienvenida h1{
+font-size:32px;
+}
+
+#bienvenida p{
+font-size:18px;
+}
+
+.galeria img{
+height:220px;
+}
+
+}
+
+#footer{
+text-align:center;
+padding:50px 20px;
+font-style:italic;
+opacity:.8;
+}
+
+@keyframes desaparecerBienvenida{
+
+from{
+opacity:1;
+}
+
+to{
+opacity:0;
+}
+
+}
+
+.ocultando{
+animation:desaparecerBienvenida .8s forwards;
+}
+
+.particula{
+position:fixed;
+pointer-events:none;
+animation:flotarParticula 10s linear forwards;
+z-index:-1;
+opacity:.8;
+}
+
+@keyframes flotarParticula{
+
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+
+15%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-150px) rotate(360deg);
+opacity:0;
+}
+
+}
+
+.pergamino{
+
+background:
+linear-gradient(
+180deg,
+#fffdf7,
+#f9f2e8
+);
+
+padding:40px;
+
+border-radius:25px;
+
+max-width:900px;
+
+margin:auto;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.15);
+
+border:2px solid
+rgba(210,180,140,.4);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.pergamino::before{
+
+content:"💌";
+
+position:absolute;
+
+top:15px;
+
+right:20px;
+
+font-size:40px;
+
+opacity:.15;
+
+}
+
+.pergamino p{
+
+line-height:1.9;
+
+font-size:1.1rem;
+
+text-align:justify;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="bienvenida">
+
+<h1>💌 Un regalo para María</h1>
+
+<p>
+Hecho con cariño ❤️
+</p>
+
+<p>
+Toca el corazón para abrir tu regalo ✨
+</p>
+
+<button onclick="abrirRegalo()" class="btn">
+ ❤️
+</button>
+
+</div>
+
+<div id="contenido">
+
+<nav id="menu">
+
+<a href="#portada">❤️ Inicio</a>
+
+<a href="#inicio">⏳ Tiempo</a>
+
+<a href="#historia">📖 Historia</a>
+
+<a href="#galeria">📷 Fotos</a>
+
+<a href="#musica">🎵 Música</a>
+
+</nav>
+
+<div class="hero-card" id="portada">
+
+<img src="portada.jpg.jpeg" alt="Portada">
+
+<h1>PARA MI YATITA LINDA 🥺💗</h1>
+
+<p>
+Hay historias que merecen ser contadas con calma.
+</p>
+
+<a href="#inicio" class="btn">
+Entrar ❤️
+</a>
+
+</div>
+
+<hr style="margin:60px 0;">
+
+<section id="inicio">
+
+<h2>
+❤️ Nuestro Tiempo Juntos
+</h2>
+
+<p id="contador">
+Cargando...
+</p>
+
+</section>
+
+<section id="historia">
+
+<h2>
+✨ Nuestra Historia
+</h2>
+
+<div class="timeline">
+
+<div class="evento reveal">
+<h3>🎓 Primer encuentro</h3>
+<p>
+Dos personas que todavía no sabían cuánto
+se iban a cambiar la vida, a pesar de 
+haber coincidido antes pero sin saber
+del otro.
+</p>
+</div>
+
+<div class="evento reveal">
+<h3>📸 Foto de cachimbos</h3>
+<p>
+Un recuerdo que parecía pequeño,
+pero terminó siendo muy importante (No encontre la foto :c).
+</p>
+</div>
+
+<div class="evento reveal">
+<h3>💋 Primer beso</h3>
+<p>
+El momento donde algo empezó a nacer.
+</p>
+</div>
+
+<div class="evento reveal">
+<h3>❤️ Dos años juntos</h3>
+<p>
+Dos años llenos de recuerdos,
+aprendizajes y amor.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="carta">
+
+<h2>
+💌 Nuestro Espacio Seguro
+</h2>
+
+<div class="evento reveal">
+<div class="pergamino">
+
+<p>
+Hola, María.
+</p>
+
+<br>
+
+<p>
+Decidí crear este rincón porque nuestra historia
+merece algo más que mensajes perdidos entre conversaciones.
+</p>
+
+<br>
+
+<p>
+Quería un lugar donde pudieras detenerte unos minutos,
+leer con calma y recordar todo aquello que vivimos juntos.
+</p>
+
+<br>
+
+<p>
+Aquí viven nuestros recuerdos,
+nuestras risas,
+nuestros aprendizajes
+y cada momento que formó parte de estos dos años.
+</p>
+
+<br>
+
+<p>
+Lo más importante de esta página no son las fotos.
+</p>
+
+<p>
+Ni los efectos.
+</p>
+
+<br>
+
+<p>
+Lo más importante es que fue creada pensando en ti.
+❤️
+</p>
+
+</div>
+</div>
+
+</section>
+
+<section id="capitulo2">
+
+<h2>
+🌟 Cuando Me Dejaste Atontado
+</h2>
+
+<div class="evento reveal">
+<div class="pergamino">
+
+<p>
+A veces pienso en lo improbable que fue todo.
+</p>
+
+<br>
+
+<p>
+Como olvidar aquel día que te vi por primera vez...                                                
+</p>
+
+<br>
+<p>
+Ese día no pude dejar de pensarte, al punto que llegue
+a contarle a Nestor sobre ti y de lo hermosa que te me
+hiciste.
+</p>
+
+<br>
+<p>
+Pasaron unos pocos días para por fin volverte a ver y 
+aunque no hablacemos, en ese tiempo me bastaba con verte
+siempre diciendole a mis amigos lo linda que te me hacias 
+(Al punto de empezar a vincularme contigo). Fue en aquella 
+reunion de cachimbos que tuvimos para dirigirnos por primera 
+vez la palabra por dichosa foto que tomo Nestor en la cual salias 
+con un gesto involuntario pero algo gracioso.
+</p> 
+
+<br>
+<p>
+Hasta que un día Jeffry te hablo de mí y diciendote todo 
+lo que yo decia de ti abrio tu curiosidad de querer 
+saber quien era yo.
+</p>
+
+<br>
+<p>
+Ahi fue donde empezamos a crear una cercanía y fuimos poco 
+a poco conociendonos.
+</p>
+
+</div>
+</div>
+
+</section>
+
+<section id="capitulo3">
+
+<h2>
+❤️ Los Dos Años y Nuestra Resistencia
+</h2>
+
+<div class="evento reveal">
+<div class="pergamino">
+
+<p>
+Si algo aprendí durante estos dos años,
+es que el amor no se mide únicamente por los momentos felices.
+</p>
+
+<br>
+
+<p>
+También se mide por las veces que decidimos quedarnos.
+</p>
+
+<p>
+Por las conversaciones difíciles.
+</p>
+
+<p>
+Por las diferencias.
+</p>
+
+<p>
+Por los momentos donde fue más fácil rendirse.
+</p>
+
+<br>
+
+<p>
+Y aun así,
+seguimos construyendo recuerdos.
+</p>
+
+<br>
+
+<p>
+Porque lo nuestro nunca fue algo superficial.
+</p>
+
+<p>
+Fue una historia construida con confianza,
+compañía,
+paciencia,
+apoyo
+y muchas ganas de compartir la vida juntos.
+</p>
+
+<br>
+
+<p>
+Gracias por cada abrazo.
+</p>
+
+<p>
+Gracias por cada consejo.
+</p>
+
+<p>
+Gracias por cada momento donde estuviste ahí.
+</p>
+
+<br>
+
+<p>
+Y gracias por formar parte de una de las etapas
+más importantes de mi vida.
+❤️
+</p>
+
+</div>
+</div>
+
+</section>
+
+<section id="capitulo4">
+
+<h2>
+🌙 El Telón de Fondo
+</h2>
+
+<div class="evento reveal">
+<div class="pergamino">
+
+<p>
+Sé que no todo ha sido sencillo.
+</p>
+
+<br>
+
+<p>
+También hubo momentos difíciles.
+</p>
+
+<p>
+Momentos donde las emociones hablaron más fuerte.
+</p>
+
+<p>
+Momentos donde ambos cometimos errores.
+</p>
+
+<br>
+
+<p>
+No escribo estas palabras para ignorar lo que pasó.
+</p>
+
+<p>
+Al contrario.
+</p>
+
+<p>
+Las escribo porque reconozco que toda historia real
+tiene capítulos complicados.
+</p>
+
+<br>
+
+<p>
+Y porque entiendo que las relaciones importantes
+también atraviesan tormentas.
+</p>
+
+<br>
+
+<p>
+Pero si algo aprendí,
+es que una historia no puede definirse
+por sus peores momentos.
+</p>
+
+<p>
+También debe recordarse por todo aquello
+que la hizo especial.
+</p>
+
+<br>
+
+<p>
+Por las sonrisas.
+</p>
+
+<p>
+Por los sueños compartidos.
+</p>
+
+<p>
+Por los recuerdos que siguen viviendo en nosotros.
+</p>
+
+<br>
+
+<p>
+Y por todo aquello que construimos juntos.
+❤️
+</p>
+
+</div>
+</div>
+
+</section>
+
+<section id="reflexion">
+
+<h2>
+🌙 Mi decision impulsiva
+</h2>
+
+<div class="evento reveal">
+
+<div class="pergamino">
+
+<p>
+Hubo un momento en nuestra historia en el que pensé que lo mejor era dejarlo hasta aquí.
+</p>
+
+<br>
+
+<p>
+Fue una decisión tomada desde la confusión, las dudas y el miedo a seguir equivocándome.
+Me carcome de a poco el pensamiento de que sera de mí en el futuro, de que si podre ser una persona
+autosuficiente en todos los aspectos, porque siento que de que sirve de que ahorita te pueda comprar
+un dulce o una blusa si mañana mas tarde no tendre la capacidad de podre darte un "pan"...
+</p>
+
+<br>
+
+<p>
+Con el tiempo entendí que algunas decisiones no deben tomarse cuando el corazón está cansado o cuando la mente está llena de ruido.
+</p>
+
+<br>
+
+<p>
+Mirando atrás, comprendí que aquello no fue una muestra de fortaleza, sino una decisión precipitada que no reflejaba realmente lo que sentía.
+</p>
+
+<br>
+
+<p>
+Porque más allá de los errores, las diferencias o los momentos difíciles, siempre hubo algo que valía la pena cuidar.
+</p>
+
+<br>
+
+<p>
+Y si esta página existe hoy, es porque aprendí que algunas personas son demasiado importantes como para rendirse sin luchar por ellas.
+</p>
+
+❤️
+
+</div>
+
+</div>
+
+</section>
+
+<section id="capitulo5">
+
+<h2>
+✨ Lo Que Realmente Quiero
+</h2>
+
+<div class="evento reveal">
+<div class="pergamino">
+
+<p>
+No hice esta página esperando una respuesta inmediata.
+</p>
+
+<br>
+
+<p>
+No la hice para presionarte.
+</p>
+
+<p>
+No la hice para convencerte de nada.
+</p>
+
+<br>
+
+<p>
+La hice porque quería expresarme de una forma sincera.
+</p>
+
+<p>
+Porque quería que supieras que,
+a pesar de todo,
+sigues siendo una de las personas más importantes de mi vida.
+</p>
+
+<br>
+
+<p>
+Y porque quería que recordaras
+que detrás de cada error,
+de cada desacuerdo
+y de cada dificultad,
+siempre existió alguien que te ama profundamente.
+</p>
+
+<br>
+
+<p>
+Lo único que realmente deseo
+es que podamos recordar todo lo bonito que construimos.
+</p>
+
+<p>
+Que podamos mirar nuestra historia con honestidad.
+</p>
+
+<p>
+Y que nunca olvidemos lo especial que fue.
+</p>
+
+<br>
+
+<p>
+Porque independientemente del camino que tome la vida,
+siempre agradeceré haber compartido una parte de ella contigo.
+❤️
+</p>
+
+</div>
+</div>
+
+</section>
+
+<section id="capitulo6">
+
+<h2>
+🌅 El Siguiente Paso
+</h2>
+
+<div class="evento reveal">
+<div class="pergamino">
+
+<p>
+No sé exactamente qué ocurrirá después de esto.
+</p>
+
+<br>
+
+<p>
+Nadie puede saberlo.
+</p>
+
+<br>
+
+<p>
+Pero sí sé algo.
+</p>
+
+<p>
+Las historias importantes merecen ser tratadas con cariño.
+</p>
+
+<p>
+Y la nuestra,
+sin importar el resultado,
+siempre será una de las más importantes de mi vida.
+</p>
+
+<br>
+
+<p>
+Gracias por tomarte el tiempo de llegar hasta aquí.
+</p>
+
+<p>
+Gracias por leer cada palabra.
+</p>
+
+<p>
+Gracias por cada recuerdo que compartimos.
+</p>
+
+<br>
+
+<p>
+Y gracias por haber formado parte de esta historia.
+</p>
+
+<br>
+
+<p>
+Con cariño,
+siempre.
+❤️
+</p>
+
+<br>
+
+<h3>
+Julio ❤️
+</h3>
+
+</div>
+</div>
+
+</section>
+
+<section id="galeria">
+
+<h2>
+📷 Nuestros Recuerdos
+</h2>
+
+<div class="galeria">
+
+<img src="foto1.jpg.jpeg" alt="Foto 1">
+<img src="foto2.jpg.jpeg" alt="Foto 2">
+<img src="foto3.jpg.jpeg" alt="Foto 3">
+<img src="foto4.jpg.jpeg" alt="Foto 4">
+<img src="foto5.jpg.jpeg" alt="Foto 5">
+<img src="foto6.jpg.jpeg" alt="Foto 6">
+<img src="foto7.jpg.jpeg" alt="Foto 7">
+<img src="foto8.jpg.jpeg" alt="Foto 8">
+<img src="foto9.jpg.jpeg" alt="Foto 9">
+<img src="foto10.jpg.jpeg" alt="Foto 10">
+<img src="foto11.jpg.jpeg" alt="Foto 11">
+<img src="foto12.jpg.jpeg" alt="Foto 12">
+<img src="foto13.jpg.jpeg" alt="Foto 13">
+<img src="foto14.jpg.jpeg" alt="Foto 14">
+<img src="foto15.jpg.jpeg" alt="Foto 15">
+
+</div>
+
+</section>
+
+<div id="lightbox">
+
+<img id="lightbox-img">
+
+</div>
+
+<section id="musica">
+
+<h2>
+🎵 Nuestra Canción
+</h2>
+
+<div class="evento reveal">
+
+<p>
+Hay canciones que simplemente se escuchan.
+</p>
+
+<p>
+Y hay otras que se convierten en recuerdos.
+❤️
+</p>
+
+<br>
+
+<a
+href="https://www.youtube.com/watch?v=MldGX_mbS-o"
+target="_blank"
+class="btn"
+>
+🎵 Escuchar
+</a>
+
+</div>
+
+</section>
+
+<section id="secreto">
+
+<h2>
+❤️ Un Último Detalle
+</h2>
+
+<div class="evento reveal">
+
+<button onclick="mostrarMensaje()" class="btn">
+Abrir ❤️
+</button>
+
+<p
+id="mensajeSecreto"
+style="
+display:none;
+margin-top:25px;
+font-size:20px;
+"
+>
+
+Si llegaste hasta aquí,
+solo quiero que sepas una cosa.
+
+Gracias por cada recuerdo.
+
+Gracias por cada sonrisa.
+
+Y gracias por haber sido parte
+de una historia que jamás olvidaré.
+
+❤️
+
+</p>
+
+</div>
+
+</section>
+</div>
+
+<footer id="footer">
+
+<p>
+"Algunas personas llegan a nuestra vida y dejan huellas que el tiempo jamás borra."
+</p>
+
+</footer>
+
+<script>
+
+const fechaInicio = new Date("2024-05-22");
+
+function actualizarContador(){
+
+const hoy = new Date();
+
+const diferencia = hoy - fechaInicio;
+
+const dias = Math.floor(
+diferencia / (1000 * 60 * 60 * 24)
+);
+
+const meses = Math.floor(dias / 30.44);
+
+const anios = Math.floor(meses / 12);
+
+document.getElementById("contador").innerHTML = `
+❤️ ${anios} años<br><br>
+❤️ ${meses} meses<br><br>
+❤️ ${dias} días juntos
+`;
+
+}
+
+actualizarContador();
+
+</script>
+
+<script>
+
+function revelarElementos(){
+
+const elementos =
+document.querySelectorAll(".reveal");
+
+elementos.forEach((elemento)=>{
+
+const alturaVentana =
+window.innerHeight;
+
+const posicion =
+elemento.getBoundingClientRect().top;
+
+if(posicion < alturaVentana - 100){
+
+elemento.classList.add("active");
+
+}
+
+});
+
+}
+
+window.addEventListener(
+"scroll",
+revelarElementos
+);
+
+revelarElementos();
+
+</script>
+
+<script>
+
+const imagenes =
+document.querySelectorAll(".galeria img");
+
+const lightbox =
+document.getElementById("lightbox");
+
+const lightboxImg =
+document.getElementById("lightbox-img");
+
+imagenes.forEach((img)=>{
+
+img.addEventListener("click",()=>{
+
+lightbox.style.display="flex";
+
+lightboxImg.src=img.src;
+
+});
+
+});
+
+lightbox.addEventListener("click",()=>{
+
+lightbox.style.display="none";
+
+});
+
+</script>
+
+<script>
+
+function mostrarMensaje(){
+
+const mensaje =
+document.getElementById(
+"mensajeSecreto"
+);
+
+mensaje.style.display="block";
+
+}
+
+</script>
+
+<div class="corazones"></div>
+
+<script>
+
+setInterval(()=>{
+
+const corazon =
+document.createElement("div");
+
+corazon.classList.add("corazon");
+
+corazon.innerHTML="❤️";
+
+corazon.style.left=
+Math.random()*100+"%";
+
+corazon.style.fontSize=
+(Math.random()*20+15)+"px";
+
+document.body.appendChild(corazon);
+
+setTimeout(()=>{
+
+corazon.remove();
+
+},8000);
+
+},800);
+
+</script>
+
+<script>
+
+function abrirRegalo(){
+
+const bienvenida =
+document.getElementById(
+"bienvenida"
+);
+
+const contenido =
+document.getElementById(
+"contenido"
+);
+
+bienvenida.classList.add(
+"ocultando"
+);
+
+/* Lanzar celebración */
+celebracion();
+
+/* Esperar 5 segundos antes de mostrar la carta */
+setTimeout(()=>{
+
+bienvenida.style.display="none";
+
+contenido.style.display="block";
+
+contenido.style.opacity="0";
+
+setTimeout(()=>{
+
+contenido.style.opacity="1";
+
+},50);
+
+window.scrollTo(0,0);
+
+},5000);
+
+}
+
+</script>
+
+<script>
+
+function celebracion(){
+
+const simbolos = [
+"❤️",
+"💖",
+"✨",
+"⭐"
+];
+
+for(let i=0;i<60;i++){
+
+setTimeout(()=>{
+
+const elemento =
+document.createElement("div");
+
+elemento.innerHTML =
+simbolos[
+Math.floor(
+Math.random()*simbolos.length
+)
+];
+
+elemento.style.position =
+"fixed";
+
+elemento.style.left =
+Math.random()*100+"%";
+
+elemento.style.top =
+"100%";
+
+elemento.style.fontSize =
+(Math.random()*20+15)+"px";
+
+elemento.style.pointerEvents =
+"none";
+
+elemento.style.zIndex =
+"99999";
+
+elemento.style.transition =
+"all 5s linear";
+
+document.body.appendChild(
+elemento
+);
+
+setTimeout(()=>{
+
+elemento.style.transform =
+"translateY(-120vh)";
+
+elemento.style.opacity =
+"0";
+
+},50);
+
+setTimeout(()=>{
+
+elemento.remove();
+
+},5000);
+
+},i*80);
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
